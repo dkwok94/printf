@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	specifiers spec[] = {
 		{"c", printchar},
 		{"s", printstr},
-		{"d", printintd},
+		{"d", printint},
+		{"i", printint},
 		{NULL, NULL}
 	};
 
@@ -33,8 +34,13 @@ int _printf(const char *format, ...)
 			for (j = 0; spec[j].s != NULL; j++)
 			{
 				if (*(spec[j].s) == format[i])
+				{
 					counter += (spec[j].printspec)(args);
+					break;
+				}
 			}
+			if (spec[j].s == NULL)
+				return (-1);
 		}
 		else
 		{
