@@ -20,5 +20,6 @@ int printchar(va_list list);
 int printstr(va_list list);
 int printint(va_list list);
 int printbin(va_list list);
+int printoctal(va_list list);
 int _putchar(char c);
 #endif

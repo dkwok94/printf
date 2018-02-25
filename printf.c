@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
                 {"i", printint},
                 {"b", printbin},
 		{"u", printuint},
+		{"o", printoctal},
                 {NULL, NULL}
         };
 
