@@ -6,6 +6,8 @@
 /**
  *printchar - prints a character
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -20,6 +22,8 @@ int printchar(va_list list, char *buffer, int bi)
 /**
  *printstr - prints a string
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -43,6 +47,8 @@ int printstr(va_list list, char *buffer, int bi)
 /**
  *printint - prints an integer
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -79,6 +85,8 @@ int printint(va_list list, char *buffer, int bi)
 /**
  *printuint - prints an unsigned int
  *@list: variadic argument list
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */

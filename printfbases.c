@@ -5,6 +5,8 @@
 /**
  *printbin - prints an unsigned int as binary
  *@list: variadic argument list
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -31,6 +33,8 @@ int printbin(va_list list, char *buffer, int bi)
 /**
  *printoctal - converts from decimal to octal
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -57,6 +61,8 @@ int printoctal(va_list list, char *buffer, int bi)
 /**
  *printhex - converts from decimal to hexadecimal
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
@@ -87,6 +93,8 @@ int printhex(va_list list, char *buffer, int bi)
 /**
  *printhexcaps - converts from decimal to hexadecimal using capital letters
  *@list: variadic list of arguments
+ *@buffer: buffer array to add characters to
+ *@bi: buffer index
  *
  *Return: number of characters printed to stdout
  */
