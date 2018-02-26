@@ -4,16 +4,17 @@
 /**
  *struct spec - printf specifiers
  *@s: character specifier
- *@print: function pointer to a format function
+ *@printspec: function pointer to a format function
  *
  *Description: structure holds a character specifier and a format function
  */
-typedef struct spec {
+typedef struct spec
+{
 	char *s;
 	int (*printspec)(va_list);
 } specifiers;
-specifiers *printfarray(void);
 
+int printfiterator(const char *format, specifiers *spec, va_list args);
 int printuint(va_list list);
 int _printf(const char *format, ...);
 int printchar(va_list list);
