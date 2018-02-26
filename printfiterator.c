@@ -6,12 +6,13 @@
  *printfiterator - loops through and decides which specifier to use
  *@format: the format string to be printed
  *@spec: the array of structures that identify the specifier functions
+ *@args: the va_list argument list for the variadic function
  *
  *Return: the number of characters printed to stdout
  */
 int printfiterator(const char *format, specifiers *spec, va_list args)
 {
-        int i, j, counter = 0;
+	int i, j, counter = 0;
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
