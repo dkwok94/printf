@@ -73,12 +73,13 @@ char *printint(va_list list)
 	integer = malloc(33);
 	if (integer == NULL)
 		return (NULL);
+
 	if (num < 0)
 	{
 		integer[i] = '-';
 		i++;
 	}
-	while (num != 0)
+	while (num > 0)
 	{
 		num = num / 10;
 		tens *= 10;
