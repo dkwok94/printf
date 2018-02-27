@@ -1,28 +1,40 @@
-NAME
-	printf - prints the character(s)
-SYNOPSIS
-	#include "holberton.h"
-	int _printf(const char *format, ...);
+.TH man 3 "27 February 2018" "0.00" "_printf man page"
+. SH NAME
+printf - prints the character(s)
+.SH SYNOPSIS
+#include "holberton.h"
+int _printf(const char *format, ...);
 DESCRIPTION
-	The printf function creates an output of a character string in
-	accordance to a specific format. If the function is successful it will
-	return the number of characters printed. The format is a string of
-	characters that the function prints. The function goes through each
-	character in the string and prints. When a % sign is reached and the
-	following character is a special character then a specific conversion
-	will occur. The special characters and their conversions are as follows:
+The printf function creates an output of a character string in
+accordance to a specific format. If the function is successful it will
+return the number of characters printed. The format is a string of
+characters that the function prints. The function goes through each
+character in the string and prints. When a % sign is reached and the
+following character is a special character then a specific conversion
+will occur. The special characters and their conversions are as follows:
 
-	c   prints a character variable
-	s   prints a string variable
-	d   prints an integer and takes an integer value as a signed decimal integer
-	i   prints an integer and takes in a decimal, hexadecimal, or octal type
-	b   prints a binary number
-	u   prints an unsigned integer
-	o   prints an octal number
-	x   prints a hexadecimal number
-	X   prints a hexadecimal number in caps
+.RS 3
+c   prints a character variable
+.br
+s   prints a string variable
+.br
+d   prints an integer and takes an integer value as a signed decimal integer
+.br
+i   prints an integer and takes in a decimal, hexadecimal, or octal type
+.br
+b   prints a binary number
+.br
+u   prints an unsigned integer
+.br
+o   prints an octal number
+.br
+x   prints a hexadecimal number
+.br
+X   prints a hexadecimal number in caps
+.br
+.RE
 
-RETURN
-	The function will return the number of characters printed. If unsuccessful the function will return null.
-AUTHOR
-	Sonia Chevli and Derek Kwok
+.SH RETURN
+The function will return the number of characters printed. If unsuccessful the function will return null.
+.SH AUTHOR
+Sonia Chevli and Derek Kwok
