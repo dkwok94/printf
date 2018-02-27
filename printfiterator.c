@@ -38,6 +38,8 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 					if (*(spec[si].s) == form[fi])
 					{
 						str = (spec[si].printspec)(args);
+						if (str == NULL)
+							return (-1);
 						for (sti = 0; str[sti] != '\0'; sti++, bi++)
 							b[bi] = str[sti];
 					}
