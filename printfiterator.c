@@ -26,7 +26,7 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 			b[bi] = form[fi];
 			bi++;
 		}
-		if (form[fi] == '%')
+		if (form[fi] == '%' && form[fi + 1] != '\0')
 		{
 			fi++;
 			while (form[fi] == ' ' && form != '\0')
@@ -42,7 +42,14 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 							return (-1);
 						for (sti = 0; str[sti] != '\0'; sti++, bi++)
 							b[bi] = str[sti];
+						break;
 					}
+				if (spec[si].s == NULL)
+				{
+					b[bi++] = '%';
+					if (form[fi] != '%')
+						b[bi++] = form[fi];
+				}
 			}
 		}
 		else
