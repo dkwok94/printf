@@ -18,7 +18,7 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 	int fi, bi = 0, si, sti = 0;
 	char *str;
 
-	for (fi = 0; form != NULL && form[fi] != '\0'; fi++)
+	for (fi = 0; form[fi] != '\0'; fi++)
 	{
 		if (form[fi] == '%' && form[fi + 1] != '\0')
 		{
