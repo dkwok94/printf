@@ -39,5 +39,6 @@ int _printf(const char *format, ...)
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
 	free(buffer);
+	va_end(args);
 	return (counter);
 }
