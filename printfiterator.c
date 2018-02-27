@@ -26,30 +26,27 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 			while (form[fi] == ' ' && form != '\0')
 				fi++;
 
-			if (form[fi] != ' ')
-			{
-				for (si = 0; spec[si].s != NULL; si++)
-					if (*(spec[si].s) == form[fi])
-					{
-						str = (spec[si].printspec)(args);
-						if (str == NULL)
-							return (-1);
-						sti = 0;
-						while (str[sti] != '\0')
-						{
-							b[bi] = str[sti];
-							sti++;
-							bi++;
-						}
-						free(str);
-						break;
-					}
-				if (spec[si].s == NULL)
+			for (si = 0; spec[si].s != NULL; si++)
+				if (*(spec[si].s) == form[fi])
 				{
-					b[bi++] = '%';
-					if (form[fi] != '%')
-						b[bi++] = form[fi];
+					str = (spec[si].printspec)(args);
+					if (str == NULL)
+						return (-1);
+					sti = 0;
+					while (str[sti] != '\0')
+					{
+						b[bi] = str[sti];
+						sti++;
+						bi++;
+					}
+					free(str);
+					break;
 				}
+			if (spec[si].s == NULL)
+			{
+				b[bi++] = '%';
+				if (form[fi] != '%')
+					b[bi++] = form[fi];
 			}
 		}
 		else
