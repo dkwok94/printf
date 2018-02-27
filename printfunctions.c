@@ -78,7 +78,7 @@ char *printint(va_list list)
 		return (integer);
 	}
 	num = num / 10;
-	if (num < 0)
+	if (num <= 0)
 	{
 		integer[i] = '-';
 		i++;
