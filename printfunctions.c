@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -11,12 +12,17 @@
  *
  *Return: number of characters printed to stdout
  */
-int printchar(va_list list, char *buffer, int bi)
+char *printchar(va_list list)
 {
+	char *character;
+	int i = 0;
 
-	buffer[bi] = (va_arg(list, int));
-	bi++;
-	return (bi);
+	character = malloc(2);
+	if (character == NULL)
+		return (NULL);
+	character[i] = (va_arg(list, int));
+	character[i + 1] = '\0';
+	return (character);
 }
 
 /**
@@ -27,21 +33,28 @@ int printchar(va_list list, char *buffer, int bi)
  *
  *Return: number of characters printed to stdout
  */
-int printstr(va_list list, char *buffer, int bi)
+char *printstr(va_list list)
 {
 	int i = 0;
 	char *str;
+	char *print;
 
 	str = va_arg(list, char *);
 	if (str == NULL)
 		str = "(null)";
 	while (str[i] != '\0')
-	{
-		buffer[bi] = str[i];
 		i++;
-		bi++;
+	print = malloc(i + 1);
+	if (print == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		print[i] = str[i];
+		i++;
 	}
-	return (bi);
+	print[i] = '\0';
+	return (print);
 }
 
 /**
@@ -52,18 +65,23 @@ int printstr(va_list list, char *buffer, int bi)
  *
  *Return: number of characters printed to stdout
  */
-int printint(va_list list, char *buffer, int bi)
+char *printint(va_list list)
 {
 	int tens = 1;
+	int i = 0;
 	int num = va_arg(list, int);
 	int tensit = num;
+	char *integer;
 
+	integer = malloc(33);
+	if (integer == NULL)
+		return (NULL);
 	if (num < 0)
 	{
 		num *= -1;
-		buffer[bi] = '-';
+		integer[i] = '-';
 		tensit *= -1;
-		bi++;
+		i++;
 	}
 	while (num != 0)
 	{
@@ -74,12 +92,13 @@ int printint(va_list list, char *buffer, int bi)
 
 	while (tens != 0)
 	{
-		buffer[bi] = ((tensit / tens) + '0');
+		integer[i] = ((tensit / tens) + '0');
 		tensit = tensit % tens;
 		tens /= 10;
-		bi++;
+		i++;
 	}
-	return (bi);
+	integer[i] = '\0';
+	return (integer);
 }
 
 /**
@@ -90,12 +109,17 @@ int printint(va_list list, char *buffer, int bi)
  *
  *Return: number of characters printed to stdout
  */
-int printuint(va_list list, char *buffer, int bi)
+char *printuint(va_list list)
 {
 	unsigned int tens = 1;
+	unsigned int i = 0;
 	unsigned int num = va_arg(list, unsigned int);
 	unsigned int tensit = num;
+	char *unsignedint;
 
+	unsignedint = malloc(33);
+	if (unsignedint == NULL)
+		return (NULL);
 	while (num != 0)
 	{
 		num = num / 10;
@@ -105,10 +129,11 @@ int printuint(va_list list, char *buffer, int bi)
 
 	while (tens != 0)
 	{
-		buffer[bi] = ((tensit / tens) + '0');
+		unsignedint[i] = ((tensit / tens) + '0');
 		tensit = tensit % tens;
 		tens /= 10;
-		bi++;
+		i++;
 	}
-	return (bi);
+	unsignedint[i] = '\0';
+	return (unsignedint);
 }
