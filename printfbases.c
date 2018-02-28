@@ -56,10 +56,10 @@ char *printoctal(va_list list)
 	if (octal == NULL)
 		return (NULL);
 	if (num == 0)
-        {
-                oct[i] = (0 + '0');
-                i++;
-        }
+	{
+		oct[i] = (0 + '0');
+		i++;
+	}
 	while (num != 0)
 	{
 		oct[i] = (num % 8) + '0';
@@ -93,10 +93,10 @@ char *printhex(va_list list)
 	if (hexa == NULL)
 		return (NULL);
 	if (num == 0)
-        {
-                hex[i] = (0 + '0');
-                i++;
-        }
+	{
+		hex[i] = (0 + '0');
+		i++;
+	}
 	while (num != 0)
 	{
 		if ((num % 16) > 9)
@@ -133,10 +133,10 @@ char *printhexcaps(va_list list)
 	if (hexa == NULL)
 		return (NULL);
 	if (num == 0)
-        {
-                hex[i] = (0 + '0');
-                i++;
-        }
+	{
+		hex[i] = (0 + '0');
+		i++;
+	}
 	while (num != 0)
 	{
 		if ((num % 16) > 9)
