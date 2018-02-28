@@ -5,7 +5,7 @@
 #include "holberton.h"
 
 /**
- *format - loops through and decides which specifier to use
+ *formats - loops through and decides which specifier to use
  *@form: the format string to be printed
  *@spec: the array of structures that identify the specifier functions
  *@args: the va_list argument list for the variadic function
@@ -14,7 +14,7 @@
  *
  *Return: the number of characters printed to stdout
  */
-int format(const char *form, specifiers *spec, va_list args, char *b, int *bi)
+int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 {
 	int fi, si, sti = 0, totalcount = 0;
 	char *str;
