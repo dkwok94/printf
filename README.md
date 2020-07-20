@@ -21,7 +21,7 @@
 ## printbufferoverflow
 * In the case the buffer becomes completely full and the string is not yet fully printed. This function is called and it empties the buffer
 ## formats
-* loops through the specifier struct array (struct defined in holberton.h) and looks to see if the character matches the a character in the specifier array (found in printf function)
+* loops through the specifier struct array (struct defined in dhk.h) and looks to see if the character matches the a character in the specifier array (found in printf function)
 ## printchar
 * This function is called if %c is found in the string and it prints a character
 ## printstr
@@ -30,7 +30,7 @@
 * This function is called if %i is found in the string and it prints an integer
 ## printuint
 * This function is called if %u is found in the string and it prints an unsigned integer
-## holberton.h
+## dhk.h
 * Header file that contains prototypes for all the functions and a struct holding a function and a character
 ## man_3_printf
 * Custom man page created for our printf function

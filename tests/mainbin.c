@@ -1,7 +1,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "dhk.h"
 
 /**
  * main - Entry point

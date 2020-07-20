@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "dhk.h"
 
 /**
  *printbin - prints an unsigned int as binary
